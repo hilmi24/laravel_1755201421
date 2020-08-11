@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mahasiswa;
+use DataTables;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -20,6 +21,14 @@ class MahasiswaController extends Controller
 
         //return $mhs->nama_lengkap;
     }
+
+    public function mhs_list()
+    {
+        return Datatables::of(Mahasiswa::all())
+                ->addIndexColumn()
+                ->make(true);
+    }
+
 
     /**
      * Show the form for creating a new resource.

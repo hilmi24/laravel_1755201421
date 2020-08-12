@@ -7,7 +7,7 @@
 
     @include('layouts.alert')
 
-    <form action=""{{ route('mhs.update', $mhs->nim)}}" method ="POST">
+    <form action="{{ route('mhs.update', $mhs->nim)}}" method ="POST">
     @csrf
     @method('PUT')
 
@@ -30,7 +30,7 @@
         <div class="col-sm-3">
         <select name="prodi" id="prodi" class="form-control">
         @foreach($prodi as $item)
-        <option value="{{ $item->kode_prodi }}" {{ ($mhs->prodi==$item->kode_prodi) ? 'selected' : '' }}> {{ $item->nama_prodi }}</option>
+        <option value="{{ $item->kode_prodi }}" {{ ($mhs->prodi==$item->kode_prodi) ? 'selected' : '' }} >{{ $item->nama_prodi }}</option>
         @endforeach
         </select>
         <small id="nama" class="form-text text-muted"></small>

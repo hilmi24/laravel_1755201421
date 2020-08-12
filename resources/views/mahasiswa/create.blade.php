@@ -1,27 +1,27 @@
- @extends('layouts.app')
+@extends('layouts.app')
 @section('title', 'Mahasiswa Page')
 @section('bread1', 'Mahasiswa')
-@section('bread2', 'Form')
+@section('bread2', 'Data')
 @section('content')
     <h3>Form Mahasiswa</h3>
 
     @include('layouts.alert')
     
-<form action="/mhs/store" method="POST">
-@csrf
+    <form action="/mhs/store" method="POST">
+    @csrf
 
     <div class="form-group row">
         <label for="nim" class="col-sm-12">NIM</label>
         <div class="col-sm-3">
         <input type="text" name="nim" class="form-control" id="nim" placeholder="Nomor Induk Mahasiswa">
-        @error('nim') <small id="nim" class="form-text text-danger">{{ $message }}</small>@enderror
+        @error('nim')<small id="nim" class="form-text text-danger">{{ $message }}</small>@enderror
         </div>
     </div>
     <div class="form-group row">
         <label for="nim" class="col-sm-12">Nama Lengkap</label>
         <div class="col-sm-5">
         <input type="text" name="nama_lengkap" class="form-control" id="nama_lengkap" placeholder="Masukan Nama Lengkap">
-        @error('nama_lengkap') <small id="nama_lengkap" class="form-text text-danger">{{ $message }}</small>@enderror
+        @error('nama_lengkap')<small id="nama_lengkap" class="form-text text-danger">{{ $message }}</small>@enderror
         </div>
     </div>
     <div class="form-group row">
@@ -43,6 +43,5 @@
     </div>
     <button class="btn btn-primary" type="submit">Simpan</button>
     <a href="{{ url()->previous() }}" class="btn btn-danger">Batal</a>
-
 </form>
 @endsection

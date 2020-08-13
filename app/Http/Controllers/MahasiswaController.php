@@ -106,9 +106,11 @@ class MahasiswaController extends Controller
     * @return \Illuminate\Http\Response
     */
    public function destroy(Mahasiswa $mahasiswa)
-  {
-       $mahasiswa->delete();
+{
+     {
+     $mahasiswa->delete();
  
        return redirect()->route('mhs.index')
                          ->with('success','Data Berhasil di Hapus');
-   } }
+     } 
+}}

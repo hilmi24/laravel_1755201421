@@ -1,12 +1,12 @@
 @extends('layouts.app')
-@section('title','Dosen Page')
-@section('bread1','Dosen')
+@section('title','Skripsi Page')
+@section('bread1','Skripsi')
 @section('bread2','Data')
 @section('content')
-    <h3>Form Dosen</h3><hr>
+    <h3>Form Skripsi</h3><hr>
     
    @include('layouts.alert')
-    <form action="{{ route('dosen.update', $dosen->kode_dosen) }}" method="POST">
+    <form action="{{ route('skripsi.update', $skripsi->kode_dosen) }}" method="POST">
    @csrf
    @method('PUT')
     <div class="form-group row">

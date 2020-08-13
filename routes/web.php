@@ -31,6 +31,15 @@ Route::post('/dosen/store', 'DosenController@store');
 Route::get('/dosen/edit/{kode_dosen}', 'DosenController@edit');
 Route::put('/dosen/update/{dosen:kode_dosen}', 'DosenController@update')->name('dosen.update');
 Route::get('/dosen/delete/{dosen:kode_dosen}', 'DosenController@destroy')->name('dosen.delete');
+//Skripsi(Route Framework)
+Route::get('/', 'SkripsiController@index');
+Route::get('/skripsi', 'SkripsiController@index')->name('skripsi.index');
+Route::get('/skripsi_list', 'SkripsiController@skripsi_list')->name('skripsi_list');
+Route::get('/skripsi/create', 'SkripsiController@create');
+Route::post('/skripsi/store', 'SkripsiController@store');
+Route::get('/skripsi/edit/{id}', 'SkripsiController@edit');
+Route::put('/skripsi/update/{skripsi:id}', 'SkripsiController@update')->name('skripsi.update');
+Route::get('/skripsi/delete/{skripsi:id}', 'SkripsiController@destroy')->name('skripsi.delete');
 
 //Prodi(Route Framework)
 Route::resource('/prodi', 'ProdiController');
